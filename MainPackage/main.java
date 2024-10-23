@@ -20,8 +20,11 @@ public class Project01Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		this.apiService.getSingleDataUsingExchangeMethod();
-		this.apiService.getSingleDataUsingGetForEntity();
-		this.apiService.getSingleDataUsingGetForObject();
+		this.apiService.getListDataUsingExchangeMethod();
+		this.apiService.postDataUsingExchangeMethod();
+		this.apiService.updateDataUsingExchangeMethod();
+		this.apiService.deleteDataUsingExchangeMethod();
+
 		
 		
 	}
