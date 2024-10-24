@@ -1,0 +1,65 @@
+package com.example.demo.ApiService;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import ch.qos.logback.core.model.INamedModel;
+
+@Service
+public class ApiServiceImpl implements ApiService{
+	
+	@Autowired
+	private RestTemplate restTemplate;
+
+	@Override
+	public void getSingleRecordUsingForObjectMethod() {
+		
+		String url = "https://api.freeapi.app/api/v1/public/randomusers/{userId}"; 
+		
+		Map<String, Integer> params = new HashMap<>();
+		params.put("userId",5);
+		Object resObject = restTemplate.getForObject(url, Object.class,params);
+		System.out.println(resObject);
+		
+	}
+
+	@Override
+	public void getListRecordUsingForObjectMethod() {
+		String url = "https://api.freeapi.app/api/v1/public/randomusers";
+		
+		Object resObject = restTemplate.getForObject(url, Object.class);
+		System.out.println(resObject);
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	
+
+	
+
+	
+
+
+
+	
+	
+	
+	
+	
+
+}
